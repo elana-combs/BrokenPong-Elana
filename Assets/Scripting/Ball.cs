@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private List<string> tags;
     [SerializeField] private string otherTag;
-    private Vector2 position;
+    private Vector2 direction;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip1;
@@ -21,14 +21,14 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(position * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     //Resets the ball position to the center.
     private void ResetBall()
     {
         transform.position = Vector2.zero;
-        position = new Vector2(RandomizeRange(), RandomizeRange()).normalized;
+        direction = new Vector2(RandomizeRange(), RandomizeRange()).normalized;
     }
 
     private float RandomizeRange()
@@ -46,13 +46,13 @@ public class Ball : MonoBehaviour
         }
         else if (other.CompareTag(otherTag))
         {
-            position.y = -position.y;
+            direction.y = -direction.y;
         }
         else if (other.CompareTag("Player"))
         {
-            position.x = -position.x;
-            position.y = transform.position.y - other.transform.position.y;
-            position = position.normalized;
+            direction.x = -direction.x;
+            direction.y = transform.position.y - other.transform.position.y;
+            direction = direction.normalized;
         }
     }
 }
