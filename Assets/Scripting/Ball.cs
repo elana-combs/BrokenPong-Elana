@@ -24,6 +24,7 @@ public class Ball : MonoBehaviour
         transform.Translate(position * x * Time.deltaTime);
     }
 
+    //Resets the ball position to the center.
     private void ResetBall()
     {
         transform.position = Vector2.zero;
