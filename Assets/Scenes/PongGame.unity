@@ -2299,8 +2299,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  tags: []
-  otherTag: 
+  tags:
+  - ScoreWall
+  - BounceWall
+  - Player
   audioSource: {fileID: 0}
   clip1: {fileID: 0}
   clip2: {fileID: 0}
