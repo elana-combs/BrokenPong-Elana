@@ -5,9 +5,10 @@ public class Ball : MonoBehaviour
 {
     public enum CollisionTag
     {
-        ScoreWall,
         BounceWall,
-        Player
+        Player,
+        ScoreWall
+        
     }
 
 
@@ -51,6 +52,7 @@ public class Ball : MonoBehaviour
         if (other.CompareTag(tags[(int)CollisionTag.ScoreWall]))
         {
             ResetBall();
+            GameManager.IncrementScore(other.GetComponent<ScoreWall>().scoringPlayer);
         }
         else if (other.CompareTag(tags[(int) CollisionTag.BounceWall]))
         {
