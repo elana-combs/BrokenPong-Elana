@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 750163710}
   - component: {fileID: 750163709}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player 2 Score
   m_TagString: ScoreWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,7 +1635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 931116977}
   m_Layer: 0
-  m_Name: OtherGameObjects
+  m_Name: Top and Bottom Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2162,7 +2162,7 @@ GameObject:
   - component: {fileID: 1368952081}
   - component: {fileID: 1368952082}
   m_Layer: 0
-  m_Name: WhyIsTheBallASquareAndNotACircle?
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2949,7 +2949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823548398}
   m_Layer: 0
-  m_Name: GameObjects
+  m_Name: Score Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2982,7 +2982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855949037}
   m_Layer: 0
-  m_Name: Art
+  m_Name: Middleground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 1890164553}
   - component: {fileID: 1890164552}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player 1 Score
   m_TagString: ScoreWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
