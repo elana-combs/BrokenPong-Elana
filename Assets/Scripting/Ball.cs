@@ -6,27 +6,28 @@ public class Ball : MonoBehaviour
     [SerializeField] private float x = 8f;
     [SerializeField] private List<string> tags;
     [SerializeField] private string otherTag;
-    private Vector2 v;
+    private Vector2 position;
 
-    [SerializeField] private AudioSource aS;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip1;
     [SerializeField] private AudioClip clip2;
     [SerializeField] private AudioClip clip3;
+
+    private float movementRange = 1f; //range is -1, 1 -- this is to fill a variable in ranges below.
     void Start()
     {
-        transform.position = Vector2.zero;
-        v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        ResetBall();
     }
 
     void Update()
     {
-        transform.Translate(v * x * Time.deltaTime);
+        transform.Translate(position * x * Time.deltaTime);
     }
 
     private void ResetBall()
     {
         transform.position = Vector2.zero;
-        v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        position = new Vector2(Random.Range(-movementRange, movementRange), Random.Range(-movementRange, movementRange)).normalized;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,13 +37,13 @@ public class Ball : MonoBehaviour
         }
         else if (other.CompareTag(otherTag))
         {
-            v.y = -v.y;
+            position.y = -position.y;
         }
         else if (other.CompareTag("Player"))
         {
-            v.x = -v.x;
-            v.y = transform.position.y - other.transform.position.y;
-            v = v.normalized;
+            position.x = -position.x;
+            position.y = transform.position.y - other.transform.position.y;
+            position = position.normalized;
         }
     }
 }
