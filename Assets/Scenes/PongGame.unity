@@ -618,17 +618,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069397689223ff47b4b2c1f907cb265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 0
-  s: 10
-  d: 4
-  ia:
-    m_Name: Ia
+  currentPlayer: 0
+  speed: 10
+  boundary: 4
+  input:
+    m_Name: Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 45f6577c-fe18-4e52-81b3-97fbb7578ab1
+    m_Id: 83ceecab-9fb3-4ff1-8873-4661f039f2c5
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 8993c33b-f705-4cb8-895e-8acfe21ca622
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: c94b5b17-d56b-4667-beed-286733f93f49
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: negative
+      m_Id: 09daab8a-44c6-4999-abca-1c23126b3e66
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
     m_Flags: 0
 --- !u!61 &417015234
 BoxCollider2D:
@@ -1259,17 +1283,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069397689223ff47b4b2c1f907cb265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 1
-  s: 10
-  d: 4
-  ia:
-    m_Name: Ia
+  currentPlayer: 0
+  speed: 10
+  boundary: 4
+  input:
+    m_Name: Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 0091a13a-ccde-43fa-b586-ac10d7ba8fe2
+    m_Id: 1a0f2b86-3476-4822-965d-5bf550b23951
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 521fe415-a07b-407e-9927-2601f9ed9202
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 872e863d-db7c-4ec4-9371-a4cd92f25f64
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: f4e7584d-16b8-45fe-9ad1-aabc0686c8b9
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
     m_Flags: 0
 --- !u!61 &710828498
 BoxCollider2D:
