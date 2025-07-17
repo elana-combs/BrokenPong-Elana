@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - BounceWall
-  - ScoreWallLeft
-  - ScoreWallRight
+  - ScoreWall
   layers:
   - Default
   - TransparentFX

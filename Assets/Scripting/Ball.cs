@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
 
 
     [SerializeField] private float speed = 8f;
-    [SerializeField] private List<string> tags;
+    [SerializeField] private List<string> collisionTags;
     
     private Vector2 direction;
 
@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
         transform.position = Vector2.zero;
         direction = new Vector2(RandomizeRange(), RandomizeRange()).normalized;
     }
-
+    //randomizes the range of a dedicated float
     private float RandomizeRange()
     {
         float range = Random.Range(-movementRange, movementRange);
@@ -49,20 +49,22 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(tags[(int)CollisionTag.ScoreWall]))
+        if (other.CompareTag(collisionTags[(int)CollisionTag.ScoreWall]))
         {
             ResetBall();
             GameManager.IncrementScore(other.GetComponent<ScoreWall>().scoringPlayer);
         }
-        else if (other.CompareTag(tags[(int) CollisionTag.BounceWall]))
+        else if (other.CompareTag(collisionTags[(int) CollisionTag.BounceWall]))
         {
             direction.y = -direction.y;
         }
-        else if (other.CompareTag(tags[(int)CollisionTag.Player]))
+        else if (other.CompareTag(collisionTags[(int)CollisionTag.Player]))
         {
             direction.x = -direction.x;
             direction.y = transform.position.y - other.transform.position.y;
             direction = direction.normalized;
         }
     }
+
+    
 }

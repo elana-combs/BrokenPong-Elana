@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    //when a player scores, it adds 1 to their score number.
     public static void IncrementScore(PlayerType playerType)
     {
         if (instance == null)
